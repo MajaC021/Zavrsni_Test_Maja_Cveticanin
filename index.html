@@ -1,0 +1,122 @@
+<html>
+<head>
+	<title>Client</title>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/search.css"/>
+	<script type="text/javascript" src="js/script.js"></script>	
+</head>
+<body onload="load()">
+<div class="container">
+	<div class="center">
+		<h3  class="card-header">Korisnik nije prijavljen na sistem</h3>
+	</br>
+		<button type="button" class="btn btn-primary" id="btnLogin" onclick="showLogin()">Login</button>
+		<button type="button" class="btn btn-success" id="btnRegister" onclick="showRegistration()">Register</button>
+    </div>
+</br>
+	<div id="odustajanje" style="display:none">
+		<button type="button" class="btn btn-outline-warning" onclick="odustajanje()">Odustajanje</button>
+		<p id="odustajanje"></p>
+	</div>
+        <div id="logout" style="display:none">
+			<br /><br />
+			<h3  class="card-header">Logout</h3>
+			<br />
+            <button type="button" class="btn btn-outline-primary" onclick="logout()">Logout</button>
+			<p id="info"></p>
+		</div>
+		<br /><br />
+
+		<div id="loginForm" style="display:none">
+			<h3  class="card-header">Login</h3>
+			<form method="post" action="post/" id="loginForm" onsubmit="return loginUser()">
+				<p><label class="card-text">Username: <input type="text" class="form-control" type="text" placeholder="Username" id="usernameLogin"></label></p>
+				<p><label class="card-text">Password: <input type="password" class="form-control" type="text" placeholder="Password" id="passwordLogin"></label></p>
+				<br />
+				<p><button class="btn btn-primary">Prijavi se</button></p>
+			</form>
+		</div>
+
+		<div id="registerForm" style="display:none">
+			<h3  class="card-header">Register</h3>
+			<form method="post" action="post/" id="registerForm" onsubmit="return registerUser()">
+				<p><label class="card-text">Email: <input type="email" class="form-control" id="emailRegister"></label></p>
+				<p><label class="card-text">Username: <input type="text" class="form-control" id="usernameRegister"></label></p>
+				<p><label class="card-text">Password: <input type="password" class="form-control" id="passwordRegister"></label></p>
+				<p><label class="card-text">Confirm password: <input type="password" class="form-control" id="confirmPasswordRegister"></label></p>
+				<br />
+				<p><button class="btn btn-primary">Registruj se</button></p>
+				<!-- <p><button class="btn btn-primary" onsubmit="cancel()">Cancel</button></p> -->
+			</form>
+			
+			<p>Password value needs to meet following parameters:</p>
+			<ol style="display:inline-block;">
+				<li>
+					at least six characters
+				</li>
+				<li>
+					at least one numeric character
+				</li>
+				<li>
+					at least one non-alphanumeric character
+				</li>
+				<li>
+					at least one small leter
+				</li>
+				<li>
+					at least one capital letter
+				</li>
+			</ol>
+			<link />
+		</div>
+		<br />
+		<br />
+
+		<div id="data" style="display:none">
+		</div>
+		<div id="searchStanovi" style="display:none" class="input-group">
+			<br />
+			<h1>Pretraga stanova na prodaju po ceni</h1>
+			<br />
+			<div class="row">
+				<div class="col"style="text-align: right;">
+					<label for="minCena" class="col-sm col-form-label"  >Start:</label>
+				</div>
+				<div class="col" style="text-align: left;">
+					<input type="number" min="10000" max="300000" class="form-control input-sm" id="minCena" >
+				</div>
+
+				<div class="col" style="text-align: right;">
+					<label for="maxCena" class="col-sm col-form-label">End:</label>
+				</div>
+				<div class="col" style="text-align: left;">
+					<input type="number" min="10000" max="300000" class="form-control input-sm" id="maxCena" >
+				</div>
+				<div class="col"></div>
+				<div class="col"></div>
+				<div class="col">
+					<button type="button" id="btnSearchStanovi" onclick="searchStanovi()" class="btn btn-primary">Pretraga</button>
+				</div>
+			</div>
+		</div>
+	</br>
+</br>
+		<div class="btn-group">		
+		<div id="formDiv" style="display:none">
+				<p><label class="card-text">Broj stana: <input class="form-control" id="brojStana"></label></p>                
+                <p><label class="card-text">Tip stana: <input class="form-control" id="tipStana"></label></p>
+                <p><label class="card-text">Broj kvadrata: <input class="form-control" id="brojKvadrata"></label></p>
+				<p><label class="card-text">Cena stana: <input type="number" class="form-control" id="cenaStana"></label></p>
+				<p><label class="card-text">Adresa: <select class="form-control" id="zgrada"></select></p>
+				<br />
+				<p><button type="button"  onclick="submitStanoviForm()" class="btn btn-primary">Submit</button></p>
+		<p><button type="button" id="cancel" name="cancel" class="btn btn-secondary" onclick="cancel()">Cancel</button></p>
+		</div>
+		</div>
+	</div>
+	</div>
+	</div>
+</div>
+</body>
+</html>
