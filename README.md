@@ -1,3 +1,5 @@
+Setup server : update-database (check connection string in the application.json)
+
 NET Web Development 16 - Finalni test
 Korišćenjem radnih okvira ASP.NET Core Web API (.NET 5.0), Entity Framework Core i 
 Bootstrap i Fetch API-a realizovati Web aplikaciju za evidenciju zgrada i njihovih stanova koji se 
